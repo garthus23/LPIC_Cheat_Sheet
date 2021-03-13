@@ -1,0 +1,39 @@
+
+body {
+    background-color: black;
+}
+
+.container {
+    max-width: 3000px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.title {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    color: gainsboro;
+    position:sticky;
+    width: 150px;
+    padding: 0px;
+    margin: 5px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+}
+
+.info {
+    display: none;
+    text-align: left;
+    color: gainsboro;
+    border: none;
+    width: 1000;
+}
+
+code {
+    border: 1px solid #959494;
+    color: gainsboro;
+    padding: 3px;
+    margin-right: 20px;
+}

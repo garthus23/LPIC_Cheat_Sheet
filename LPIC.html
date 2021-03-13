@@ -1,0 +1,159 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="toggleMenu.js"></script>
+
+<body>
+
+    <!--    <p id="menu" onclick="toggleMenu()"> Menu</p>
+    <ul id="menu-box" style="display: block">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="animal.html">Animal</a></li>
+        <li><a href="pictures.html">Pictures</a></li>
+    </ul> -->
+
+    <div class="container">
+        <div class="title" onclick="toggleMenu(`menu`)"> SysV init </div>
+        <div class="info" id="menu">
+            <ul>
+                <p><code>/etc/inittab</code> defines what applications start at which runlevel -- format :
+                    id:runlevels:action:process</p>
+                <p><code>/etc/init.d/rc</code> startup init script</p>
+                <p><code>/etc/rc.d/rc</code> startup init script</p>
+                <p><code>chkconfig</code> modify run level for a program rhel</p>
+                <p><code>update-rc.d</code> modify run level for a program debian</p>
+                <p><code>runlevel</code> display current run level</p>
+                <p><code>init 6</code> changing current run level</p>
+            </ul>
+        </div>
+
+        <div class="title" onclick="toggleMenu(`systemd`)"> Systemd </div>
+        <div class="info" id="systemd">
+            <ul>
+                <p><code>systemctl list-units</code> list the current loaded units</p>
+                <p><code>/lib/systemd/system</code> check the system units files</p>
+                <p><code>ls -la /lib/systemd/system/default.target</code></p>
+                <p><code>systemctl get-default</code> get default target</p>
+                <p><code>systemctl isolate graphical.target</code> changing current target</p>
+            </ul>
+        </div>
+
+        <div class="title" onclick="toggleMenu(`msg`)"> Message </div>
+        <div class="info" id="msg">
+            <ul>
+                <p><code>mesg</code> msg n turned off or turned on y</p>
+                <p><code>wall</code> broadcast message to logged users</p>
+                <p><code>write greg tty7</code> send a message to a user online</p>
+                <p><code>notify-send</code> send a message to a GUI user</p>
+                <p><code>/etc/motd</code> logon msg only tty user</p>
+                <p><code>/etc/issue</code> additionnal logon msg for remote user</p>
+                <p><code>/usr/sbin/shutdown [options] time [ wall message]</code> plan a shutdown and send a msg</p>
+            </ul>
+        </div>
+
+        <div class="title" onclick="toggleMenu(`fs`)"> Filesystem </div>
+        <div class="info" id="fs">
+            <ul>
+                <p><code>/bin</code> User utility programs</p>
+                <p><code>/boot</code> files used during
+                    the system boot process</p>
+                <p><code>/dev</code> device files for the hardware
+                    devices system</p>
+                <p><code>/etc</code> System configuration files</p>
+                <p><code>/home</code> Users home folder</p>
+                <p><code>/lib</code> Stores kernel modules and shared
+                    libraries</p>
+                <p><code>/lost+found</code> Files saved during unplanned system
+                    shutdowns</p>
+                <p><code>/media</code> Temporary mount directory for
+                    removable media devices</p>
+                <p><code>/mnt</code> Temporary mount directory for
+                    removable media devices</p>
+                <p><code>/opt</code> Third application software</p>
+                <p><code>/proc</code> Virtual filesystem for running processes
+                    and kernel information</p>
+                <p><code>/root</code> Root user directory</p>
+                <p><code>/run</code> A tmpfs filesystem mounted early dur
+                    ing the boot process and used by varioustools</p>
+                <p><code>/sbin</code> Administrator utility programs</p>
+                <p><code>/sys</code> Virtual filesystem stores information con-
+                    cerning and allows modification of con-
+                    nected hardware devices.</p>
+                <p><code>/tmp</code> Temporary files</p>
+                <p><code>/usr</code> Stores binaries, documentation, source
+                    code, libraries, and so on</p>
+                <p><code>/var</code> Contains log, lock, spool, mail, and temp
+                    files </p>
+            </ul>
+        </div>
+
+        <div class="title" onclick="toggleMenu(`hm`)"> Soft Monitor </div>
+        <div class="info" id="hm">
+            <ul>
+                <p><code>free</code> Shows the amount of free/used
+                    physical and swap memory </p>
+                <p><code>top</code> Multiple display panels that show
+                    various resource usage data such as
+                    processes consuming the most CPU</p>
+                <p><code>htop</code> Enhancement of the top utility</p>
+                <p><code>iostat</code> Shows device I/O loading summary
+                    broken down per device</p>
+                <p><code>iotop</code> Similar to the top utility, it shows
+                    current I/O usage by processes (or threads) </p>
+                <p><code>mpstat</code> Shows multiple processor statistics </p>
+                <p><code>pmap</code> Shows a processes map for the PID
+                    parameter </p>
+                <p><code>ps</code> Shows current process information,
+                    including CPU consumption </p>
+                <p><code>pstree</code> Shows current processes in a tree format</p>
+                <p><code>sar</code> Acronym for System Activity Reporter: a Static or Dynamic
+                    multiple resource monitoring utility</p>
+                <p><code>uptime</code> Shows how long the system has gone
+                    without a reboot</p>
+                <p><code>vmstat</code> Shows swap (virtual memory)
+                    performance</p>
+                <p><code>w</code> Shows current user information,
+                    including CPU consumption.</p>
+                
+                
+                
+                
+            </ul>
+        </div>
+
+        <div class="title" onclick="toggleMenu(`net`)"> Net Monitor </div>
+        <div class="info" id="net">
+            <ul>
+                <p><code>iftop</code> shows current network traffic information,
+                    including DNS</p>
+                <p><code>ip</code> display network and routing statistics </p>
+                <p><code>iptraf</code> Shows network information, and it is
+                    menu driven. </p>
+                <p><code>lsof -p $PID</code> Shows open files and network
+                    connections by process </p>
+                <p><code>mtr</code> Shows routing information for the
+                    URL parameter </p>
+                <p><code>ntop</code> Gathers network statistics that can
+                    be viewed via a web browser via
+                    port 3000 </p>
+                <p><code>ss</code> Displays socket statistics directly from
+                    kernel space </p>
+                <p><code>tcpdump</code> A packet analyzer/sniffer</p>
+            </ul>
+        </div>
+
+        <div class="title" onclick="toggleMenu(`fpf`)"> New </div>
+        <div class="info" id="fpf">
+            <ul>
+            </ul>
+        </div>
+
+
+
+    </div>
+</body>
+<foot>
+</foot>
+
+</html>

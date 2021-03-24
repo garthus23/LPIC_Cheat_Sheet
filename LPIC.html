@@ -74,12 +74,11 @@
                 <p><code>/proc</code> Virtual filesystem for running processes
                     and kernel information</p>
                 <p><code>/root</code> Root user directory</p>
-                <p><code>/run</code> A tmpfs filesystem mounted early dur
-                    ing the boot process and used by varioustools</p>
+                <p><code>/run</code> A tmpfs filesystem mounted early during 
+                    the boot process and used by varioustools</p>
                 <p><code>/sbin</code> Administrator utility programs</p>
-                <p><code>/sys</code> Virtual filesystem stores information con-
-                    cerning and allows modification of con-
-                    nected hardware devices.</p>
+                <p><code>/sys</code> Virtual filesystem stores information concerning and allows modification of
+                    connected hardware devices.</p>
                 <p><code>/tmp</code> Temporary files</p>
                 <p><code>/usr</code> Stores binaries, documentation, source
                     code, libraries, and so on</p>
@@ -115,10 +114,10 @@
                     performance</p>
                 <p><code>w</code> Shows current user information,
                     including CPU consumption.</p>
-                
-                
-                
-                
+
+
+
+
             </ul>
         </div>
 
@@ -135,21 +134,70 @@
                 <p><code>mtr</code> Shows routing information for the
                     URL parameter </p>
                 <p><code>ntop</code> Gathers network statistics that can
-                    be viewed via a web browser via
-                    port 3000 </p>
+                    be viewed via a web browser via port 3000 </p>
                 <p><code>ss</code> Displays socket statistics directly from
                     kernel space </p>
                 <p><code>tcpdump</code> A packet analyzer/sniffer</p>
             </ul>
         </div>
 
-        <div class="title" onclick="toggleMenu(`fpf`)"> New </div>
-        <div class="info" id="fpf">
+        <div class="title" onclick="toggleMenu(`kernel`)"> Kernel </div>
+        <div class="info" id="kernel">
             <ul>
+                <p><code>/boot/vmlinuz</code> Kernel binary </p>
+                <p><code>/boot/system.map</code> debugging the kernel </p>
+                <p><code>/boot/initrd.img</code> Initial ram disk contain module required by the kernel to boot</p>
+                <p><code>/lib/modules</code> kernel modules used to load hardware driver without recompiling</p>
+                <p><code>/usr/src/linux</code> kernel sources code directory recommended</p>
+                <h3>Generate .config to compile a Kernel :</h3>
+                <p><code>defconfig</code> Creates a default configuration file based on the system type detected</p>
+                <p><code>oldconfig</code> Updates an existing configuration file with only the new features</p>
+                <p><code>menuconfig</code> Uses a text-based menu system allowing you to select which features to
+                    include</p>
+                <p><code>xconfig</code> Creates a graphical menu allowing you to select which features to include </p>
+                <p><code>mkinitrd</code> Rhel command to generate init ram disk </p>
+                <p><code>mkinitramfs</code> debian command to generate init ram disk </p>
+                <p><code>update-grub</code> update grub2 conf file by scanning /boot</p>
+                <h3>Troubleshooting the Kernel :</h3>
+                <p><code>uname -a</code> list current kernel informations </p>
+                <p><code>/proc</code> peek at configuration and performance information related to the kernel while it’s running </p>
+                <p><code>lsdev</code> display hardware information found in the /proc filesystem in one easy table </p>
+
+
+
+
             </ul>
         </div>
 
+        <div class="title" onclick="toggleMenu(`kmodules`)"> Modules  </div>
+        <div class="info" id="kmodules">
+            <ul>
+                <p><code>/etc/modules</code> debian Kernel modules loaded at boot time </p>
+                <p><code>/etc/modules.d</code> rhel Kernel modules loaded at boot time </p>
+                <p><code>/lib/modules</code> kernel modules location</p>
+                <p><code>/lib/modules/version/modules.dep</code> module dependency </p>
+                <p><code>dkms</code> Dynamic kernel module Support.scripts to recompile and install custom modules
+                    when the kernel version changes </p>
+                <p><code>lsmod</code> list all the modules installed on the system </p>
+                <p><code>modinfo</code> Show more informations about a module</p>
+                <p><code>insmod /lib/modules/version/../...ko</code> Install module file, dependencies modules must be already installed</p>
+                <p><code>modprobe -iv</code> Install module by module name and resolve dependencies </p>
+                <p><code>modprobe -rv</code>  Remove module by module name </p>
+                <p><code>lspci</code>  list hardware motherboard internal connected devices </p>
+                <p><code>lsusb</code> list external usb devices  </p>
+                <p><code>udev device Manager</code> The udevd program matches the kernel messages against rules defi ned in a set of confi g-
+                    uration files </p>
+                <p><code>/etc/udev/udev.conf</code> udev manager config file  </p>
+                <p><code>/etc/udev/rules.d</code> udev rules folder config  </p>
+                <p><code>/lib/udev/rules.d</code> udev rules folder config  </p>
+            </ul>
+        </div>
 
+        <div class="title" onclick="toggleMenu(`fpf`)"> New </div>
+        <div class="info" id="kmodules">
+            <ul>
+            </ul>
+        </div>
 
     </div>
 </body>
